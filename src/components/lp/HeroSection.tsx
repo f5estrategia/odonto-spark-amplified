@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import bannerDesktop from "@/assets/banner-desktop.jpg";
 import bannerMobile from "@/assets/banner-mobile.jpg";
 import logotipoCurso from "@/assets/logotipo-curso.svg";
+import f5EducacaoLogo from "@/assets/f5-educacao-logo.svg";
 
 const HeroSection = () => {
   const scrollToOffer = () => {
@@ -13,11 +14,16 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
       {/* Top navigation bar */}
-      <nav className="relative z-20 flex items-center justify-center px-4 py-4 md:px-6">
+      <nav className="relative z-20 flex flex-col items-center gap-3 px-4 py-5 md:py-6 md:px-6">
         <img 
           src={logotipoCurso} 
           alt="Autoridade Clínica - Dominando a Comunicação Digital" 
-          className="h-8 md:h-10 w-auto"
+          className="h-12 sm:h-14 md:h-16 w-auto"
+        />
+        <img 
+          src={f5EducacaoLogo} 
+          alt="F5 Educação" 
+          className="h-8 sm:h-10 md:h-12 w-auto opacity-80"
         />
       </nav>
 
@@ -111,9 +117,9 @@ const HeroSection = () => {
         >
           <Button 
             onClick={scrollToOffer}
-            className="w-full btn-primary text-sm sm:text-base md:text-lg px-6 py-5 md:py-6 h-auto animate-pulse-glow"
+            className="w-full btn-primary text-[13px] sm:text-sm md:text-lg px-4 sm:px-6 py-5 md:py-6 h-auto animate-pulse-glow leading-tight"
           >
-            QUERO ME TORNAR UMA AUTORIDADE →
+            QUERO SER UMA AUTORIDADE →
           </Button>
           
           {/* Trust indicators */}

@@ -126,9 +126,9 @@ const PainPointsSection = () => {
           <Button 
             onClick={scrollToOffer}
             variant="outline"
-            className="mt-6 md:mt-8 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm"
+            className="mt-6 md:mt-8 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-[13px] sm:text-sm px-4 sm:px-6"
           >
-            QUERO TER CORAGEM TAMBÉM →
+            QUERO TER CORAGEM →
           </Button>
         </motion.div>
       </div>

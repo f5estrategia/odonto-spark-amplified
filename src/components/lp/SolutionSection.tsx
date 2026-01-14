@@ -185,9 +185,9 @@ const SolutionSection = () => {
         >
           <Button 
             onClick={scrollToOffer}
-            className="btn-primary text-sm md:text-lg px-8 md:px-10 py-5 md:py-6 h-auto"
+            className="btn-primary text-[13px] sm:text-sm md:text-lg px-4 sm:px-8 md:px-10 py-5 md:py-6 h-auto leading-tight"
           >
-            QUERO DOMINAR ESSA HABILIDADE →
+            DOMINAR ESSA HABILIDADE →
           </Button>
         </motion.div>
       </div>

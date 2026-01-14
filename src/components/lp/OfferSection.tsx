@@ -202,11 +202,11 @@ const OfferSection = () => {
                 {/* CTA Button */}
                 <Button 
                   asChild
-                  className="w-full md:w-auto btn-primary text-sm md:text-lg px-8 md:px-12 py-5 md:py-7 h-auto animate-pulse-glow mb-4 md:mb-6"
+                  className="w-full md:w-auto btn-primary text-[13px] sm:text-sm md:text-lg px-4 sm:px-8 md:px-12 py-5 md:py-7 h-auto animate-pulse-glow mb-4 md:mb-6 leading-tight"
                 >
                   <a href={checkoutUrl}>
-                    <Zap className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                    QUERO SER UMA AUTORIDADE CLÍNICA
+                    <Zap className="w-4 h-4 md:w-5 md:h-5 mr-1.5 md:mr-2 flex-shrink-0" />
+                    SER UMA AUTORIDADE CLÍNICA
                   </a>
                 </Button>
 

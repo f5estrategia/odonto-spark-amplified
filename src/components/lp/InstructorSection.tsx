@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Tv, Building2, Mic2, Users, Award, TrendingUp, Trophy } from "lucide-react";
+import f5EducacaoLogo from "@/assets/f5-educacao-logo.svg";
 
 const credentials = [
   {
@@ -60,19 +61,19 @@ const InstructorSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+          <span className="text-primary font-semibold text-xs md:text-sm uppercase tracking-wider">
             Seu mentor
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-3 md:mt-4 mb-4 md:mb-6 px-2">
             Quem Está Por Trás dos
-            <br className="hidden md:block" />
+            <br className="hidden sm:block" />
             <span className="text-gradient">Resultados Comprovados</span>
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Photo */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
@@ -81,7 +82,7 @@ const InstructorSection = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="aspect-[4/5] rounded-3xl overflow-hidden border-2 border-primary/20 glow-orange">
+            <div className="aspect-[4/5] rounded-2xl md:rounded-3xl overflow-hidden border-2 border-primary/20 glow-orange">
               <img 
                 src="https://crcqueconverte.f5educacao.com/assets/images/fernando-machado.webp" 
                 alt="Fernando Machado"
@@ -90,39 +91,19 @@ const InstructorSection = () => {
               />
             </div>
             
-            {/* Floating badge */}
+            {/* Floating badge with F5 logo */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="absolute -bottom-4 -right-4 md:bottom-8 md:-right-8 bg-primary text-primary-foreground p-4 md:p-6 rounded-2xl shadow-lg shadow-primary/30"
+              className="absolute -bottom-3 -right-3 md:bottom-6 md:-right-6 bg-card border-2 border-primary/30 p-3 md:p-4 rounded-xl md:rounded-2xl shadow-lg"
             >
-              <div className="text-center">
-                <Award className="w-8 h-8 mx-auto mb-2" />
-                <p className="font-bold text-lg">CEO & Fundador</p>
-                <p className="text-sm opacity-90">F5 Estratégia</p>
-              </div>
-            </motion.div>
-
-            {/* Stats overlay */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="absolute bottom-4 left-4 right-4 md:bottom-8 md:left-8 md:right-auto"
-            >
-              <div className="grid grid-cols-2 gap-2 md:gap-4 p-3 md:p-4 rounded-xl bg-background/90 backdrop-blur-sm border border-border">
-                <div className="text-center px-2 md:px-4">
-                  <div className="text-primary font-bold text-sm md:text-lg">22% → 45%</div>
-                  <div className="text-[10px] md:text-xs text-muted-foreground">Taxa de Conversão</div>
-                </div>
-                <div className="text-center px-2 md:px-4 border-l border-border">
-                  <div className="text-primary font-bold text-sm md:text-lg">+35%</div>
-                  <div className="text-[10px] md:text-xs text-muted-foreground">Ticket Médio</div>
-                </div>
-              </div>
+              <img 
+                src={f5EducacaoLogo} 
+                alt="F5 Educação" 
+                className="h-12 md:h-16 w-auto"
+              />
             </motion.div>
           </motion.div>
 
@@ -133,10 +114,10 @@ const InstructorSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-3xl md:text-4xl font-bold mb-2">Fernando Machado</h3>
-            <p className="text-primary font-medium mb-6">Ex-Âncora SBT • CEO F5 Estratégia</p>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 md:mb-2">Fernando Machado</h3>
+            <p className="text-primary font-medium mb-4 md:mb-6 text-sm md:text-base">Ex-Âncora SBT • CEO F5 Estratégia</p>
             
-            <div className="space-y-4 text-lg text-muted-foreground mb-8">
+            <div className="space-y-3 md:space-y-4 text-sm md:text-lg text-muted-foreground mb-6 md:mb-8">
               <p className="leading-relaxed">
                 Uma pessoa que falava "poblema" virou{" "}
                 <span className="text-foreground font-semibold">apresentador de televisão nacional</span>.
@@ -165,7 +146,7 @@ const InstructorSection = () => {
             </div>
 
             {/* Credentials */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-2 md:gap-4">
               {credentials.map((cred, index) => (
                 <motion.div
                   key={index}
@@ -173,14 +154,14 @@ const InstructorSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.1 * index }}
-                  className="flex items-center gap-3 p-4 rounded-xl bg-secondary/50 border border-border"
+                  className="flex items-center gap-2 md:gap-3 p-3 md:p-4 rounded-lg md:rounded-xl bg-secondary/50 border border-border"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <cred.icon className="w-5 h-5 text-primary" />
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <cred.icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-bold text-foreground">{cred.value}</p>
-                    <p className="text-xs text-muted-foreground">{cred.label}</p>
+                    <p className="font-bold text-foreground text-sm md:text-base">{cred.value}</p>
+                    <p className="text-[10px] md:text-xs text-muted-foreground">{cred.label}</p>
                   </div>
                 </motion.div>
               ))}
@@ -194,14 +175,14 @@ const InstructorSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-20"
+          className="mt-12 md:mt-20"
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-10">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-8 md:mb-10 px-2">
             Da TV ao Vivo para Transformar{" "}
             <span className="text-gradient">Clínicas Odontológicas</span>
           </h3>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
@@ -209,13 +190,13 @@ const InstructorSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all text-center"
+                className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border hover:border-primary/30 transition-all text-center"
               >
-                <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <achievement.icon className="w-6 h-6 text-primary" />
+                <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 md:mb-4 rounded-lg md:rounded-xl bg-primary/10 flex items-center justify-center">
+                  <achievement.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                 </div>
-                <h4 className="font-semibold mb-2">{achievement.title}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <h4 className="font-semibold mb-1 md:mb-2 text-sm md:text-base">{achievement.title}</h4>
+                <p className="text-[11px] md:text-sm text-muted-foreground leading-relaxed">
                   {achievement.description}
                 </p>
               </motion.div>
