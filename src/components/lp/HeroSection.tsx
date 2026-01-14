@@ -3,6 +3,7 @@ import { ChevronDown, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import bannerDesktop from "@/assets/banner-desktop.jpg";
 import bannerMobile from "@/assets/banner-mobile.jpg";
+import f5Logo from "@/assets/f5-logo.png";
 
 const HeroSection = () => {
   const scrollToOffer = () => {
@@ -14,10 +15,7 @@ const HeroSection = () => {
       {/* Top navigation bar */}
       <nav className="relative z-20 flex items-center justify-between px-6 py-4">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center font-bold text-primary-foreground">
-            F5
-          </div>
-          <span className="text-sm font-medium text-muted-foreground hidden sm:block">estratégia</span>
+          <img src={f5Logo} alt="F5 Educação" className="h-10 w-auto" />
         </div>
         <span className="text-sm font-semibold text-foreground">Autoridade Clínica</span>
       </nav>
