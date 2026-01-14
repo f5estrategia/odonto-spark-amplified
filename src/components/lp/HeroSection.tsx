@@ -3,7 +3,7 @@ import { ChevronDown, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import bannerDesktop from "@/assets/banner-desktop.jpg";
 import bannerMobile from "@/assets/banner-mobile.jpg";
-import f5Logo from "@/assets/f5-logo.png";
+import logotipoCurso from "@/assets/logotipo-curso.svg";
 
 const HeroSection = () => {
   const scrollToOffer = () => {
@@ -13,11 +13,12 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
       {/* Top navigation bar */}
-      <nav className="relative z-20 flex items-center justify-between px-6 py-4">
-        <div className="flex items-center gap-2">
-          <img src={f5Logo} alt="F5 Educação" className="h-10 w-auto" />
-        </div>
-        <span className="text-sm font-semibold text-foreground">Autoridade Clínica</span>
+      <nav className="relative z-20 flex items-center justify-center px-4 py-4 md:px-6">
+        <img 
+          src={logotipoCurso} 
+          alt="Autoridade Clínica - Dominando a Comunicação Digital" 
+          className="h-8 md:h-10 w-auto"
+        />
       </nav>
 
       {/* Background gradient */}
@@ -41,16 +42,16 @@ const HeroSection = () => {
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
       
-      <div className="relative z-10 container-lp flex-1 flex flex-col items-center justify-center text-center py-12">
+      <div className="relative z-10 container-lp flex-1 flex flex-col items-center justify-center text-center py-8 md:py-12">
         {/* Badge */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-8"
+          className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 border border-primary/30 mb-6 md:mb-8"
         >
           <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-          <span className="text-sm text-primary font-medium">
+          <span className="text-xs md:text-sm text-primary font-medium">
             Método exclusivo para dentistas
           </span>
         </motion.div>
@@ -61,7 +62,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 leading-tight px-2">
             Você é um excelente dentista.
             <br />
             <span className="text-gradient">Mas ninguém sabe disso.</span>
@@ -73,7 +74,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mb-8"
+          className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mb-6 md:mb-8 px-2"
         >
           Descubra como transformar sua expertise clínica em{" "}
           <span className="text-foreground font-semibold">autoridade digital</span> e atrair os 
@@ -85,19 +86,19 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="relative w-full max-w-4xl mx-auto mb-8"
+          className="relative w-full max-w-4xl mx-auto mb-6 md:mb-8 px-2"
         >
           {/* Desktop Banner */}
           <img 
             src={bannerDesktop}
             alt="Autoridade Clínica - Dominando a Comunicação Digital"
-            className="hidden md:block w-full rounded-2xl border-2 border-primary/30 glow-orange"
+            className="hidden md:block w-full rounded-xl md:rounded-2xl border-2 border-primary/30 glow-orange"
           />
           {/* Mobile Banner */}
           <img 
             src={bannerMobile}
             alt="Autoridade Clínica - Dominando a Comunicação Digital"
-            className="block md:hidden w-full max-w-sm mx-auto rounded-2xl border-2 border-primary/30 glow-orange"
+            className="block md:hidden w-full max-w-xs sm:max-w-sm mx-auto rounded-xl border-2 border-primary/30 glow-orange"
           />
         </motion.div>
 
@@ -106,24 +107,24 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="w-full max-w-md"
+          className="w-full max-w-md px-4"
         >
           <Button 
             onClick={scrollToOffer}
-            className="w-full btn-primary text-base md:text-lg px-8 py-6 h-auto animate-pulse-glow"
+            className="w-full btn-primary text-sm sm:text-base md:text-lg px-6 py-5 md:py-6 h-auto animate-pulse-glow"
           >
             QUERO ME TORNAR UMA AUTORIDADE →
           </Button>
           
           {/* Trust indicators */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-6 text-xs md:text-sm text-muted-foreground">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 sm:gap-4 mt-4 md:mt-6 text-xs text-muted-foreground">
             <div className="flex items-center gap-1">
-              <CheckCircle2 className="w-4 h-4 text-primary" />
-              Método validado em +3.000 clínicas
+              <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
+              <span>Método validado em +3.000 clínicas</span>
             </div>
             <div className="flex items-center gap-1">
-              <CheckCircle2 className="w-4 h-4 text-primary" />
-              Garantia de 7 dias
+              <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
+              <span>Garantia de 7 dias</span>
             </div>
           </div>
         </motion.div>

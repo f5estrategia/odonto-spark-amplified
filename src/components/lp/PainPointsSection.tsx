@@ -63,20 +63,20 @@ const PainPointsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+          <span className="text-primary font-semibold text-xs md:text-sm uppercase tracking-wider">
             O problema
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-3 md:mt-4 mb-4 md:mb-6 px-2">
             Você reconhece algum 
-            <br className="hidden md:block" />
+            <br className="hidden sm:block" />
             <span className="text-gradient">desses cenários?</span>
           </h2>
         </motion.div>
 
         {/* Pain points grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {painPoints.map((point, index) => (
             <motion.div
               key={index}
@@ -84,13 +84,13 @@ const PainPointsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group p-6 rounded-2xl bg-secondary/50 border border-border hover:border-destructive/50 transition-all duration-300"
+              className="group p-4 md:p-6 rounded-xl md:rounded-2xl bg-secondary/50 border border-border hover:border-destructive/50 transition-all duration-300"
             >
-              <div className="flex items-start gap-4">
-                <span className="text-3xl">{point.emoji}</span>
+              <div className="flex items-start gap-3 md:gap-4">
+                <span className="text-2xl md:text-3xl">{point.emoji}</span>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2">{point.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2">{point.title}</h3>
+                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
                     {point.description}
                   </p>
                 </div>
@@ -105,19 +105,19 @@ const PainPointsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16 max-w-3xl mx-auto text-center"
+          className="mt-10 md:mt-16 max-w-3xl mx-auto text-center"
         >
-          <blockquote className="relative p-8 rounded-2xl bg-gradient-to-br from-secondary to-card border border-border">
-            <span className="absolute top-4 left-4 text-5xl text-primary/20">"</span>
-            <p className="text-xl md:text-2xl text-foreground italic leading-relaxed">
+          <blockquote className="relative p-5 md:p-8 rounded-xl md:rounded-2xl bg-gradient-to-br from-secondary to-card border border-border">
+            <span className="absolute top-2 left-2 md:top-4 md:left-4 text-3xl md:text-5xl text-primary/20">"</span>
+            <p className="text-lg sm:text-xl md:text-2xl text-foreground italic leading-relaxed px-4 md:px-6">
               O medo de falar em público é o maior medo da humanidade.
               <br />
               <span className="text-primary font-semibold">Maior que o medo da morte.</span>
             </p>
-            <span className="absolute bottom-4 right-4 text-5xl text-primary/20">"</span>
+            <span className="absolute bottom-2 right-2 md:bottom-4 md:right-4 text-3xl md:text-5xl text-primary/20">"</span>
           </blockquote>
           
-          <p className="text-muted-foreground mt-8 text-lg">
+          <p className="text-muted-foreground mt-6 md:mt-8 text-sm md:text-lg px-4">
             Não adianta ficar reclamando e nem mesmo ficar assistindo outras pessoas 
             que sabem menos que você ter mais sucesso. O que elas têm?{" "}
             <span className="text-primary font-bold">Coragem.</span>
@@ -126,7 +126,7 @@ const PainPointsSection = () => {
           <Button 
             onClick={scrollToOffer}
             variant="outline"
-            className="mt-8 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+            className="mt-6 md:mt-8 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm"
           >
             QUERO TER CORAGEM TAMBÉM →
           </Button>

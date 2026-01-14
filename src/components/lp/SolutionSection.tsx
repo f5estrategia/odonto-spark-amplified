@@ -65,26 +65,26 @@ const SolutionSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-destructive/10 border border-destructive/30 mb-6">
-            <span className="text-destructive text-sm font-medium">⚠️ A CAUSA RAIZ</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-destructive/10 border border-destructive/30 mb-4 md:mb-6">
+            <span className="text-destructive text-xs md:text-sm font-medium">⚠️ A CAUSA RAIZ</span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 px-2">
             Por Que Você Ainda Não é Uma
-            <br className="hidden md:block" />
+            <br className="hidden sm:block" />
             <span className="text-gradient">Autoridade Digital?</span>
           </h2>
           
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-sm md:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
             O erro não está na sua técnica clínica. 
             <strong className="text-foreground"> Está na falta de técnica de comunicação.</strong>
           </p>
         </motion.div>
 
         {/* Root causes grid */}
-        <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto mb-20">
+        <div className="grid sm:grid-cols-2 gap-3 md:gap-4 max-w-4xl mx-auto mb-14 md:mb-20">
           {rootCauses.map((cause, index) => (
             <motion.div
               key={index}
@@ -92,12 +92,12 @@ const SolutionSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex gap-4 p-5 rounded-xl bg-destructive/5 border border-destructive/20"
+              className="flex gap-3 md:gap-4 p-4 md:p-5 rounded-lg md:rounded-xl bg-destructive/5 border border-destructive/20"
             >
-              <span className="text-destructive font-bold text-xl">{cause.icon}</span>
+              <span className="text-destructive font-bold text-lg md:text-xl">{cause.icon}</span>
               <div>
-                <h4 className="font-semibold mb-1">{cause.title}</h4>
-                <p className="text-muted-foreground text-sm">{cause.description}</p>
+                <h4 className="font-semibold text-sm md:text-base mb-1">{cause.title}</h4>
+                <p className="text-muted-foreground text-xs md:text-sm">{cause.description}</p>
               </div>
             </motion.div>
           ))}
@@ -109,15 +109,15 @@ const SolutionSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-14 md:mb-20"
         >
-          <div className="inline-block p-6 md:p-8 rounded-2xl bg-gradient-to-br from-secondary to-card border border-primary/20">
-            <p className="text-xl md:text-2xl text-foreground italic mb-4">
+          <div className="inline-block p-5 md:p-8 rounded-xl md:rounded-2xl bg-gradient-to-br from-secondary to-card border border-primary/20 mx-4">
+            <p className="text-lg sm:text-xl md:text-2xl text-foreground italic mb-3 md:mb-4">
               "Comunicação é a{" "}
               <span className="text-primary font-semibold">única arma</span>{" "}
               que você tem para jogar esse jogo."
             </p>
-            <p className="text-sm text-muted-foreground">— Fernando Machado, CEO F5 Estratégia</p>
+            <p className="text-xs md:text-sm text-muted-foreground">— Fernando Machado, CEO F5 Estratégia</p>
           </div>
         </motion.div>
 
@@ -127,26 +127,26 @@ const SolutionSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-10 md:mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
-            <CheckCircle2 className="w-4 h-4 text-primary" />
-            <span className="text-primary text-sm font-medium">A SOLUÇÃO</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 border border-primary/30 mb-4 md:mb-6">
+            <CheckCircle2 className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
+            <span className="text-primary text-xs md:text-sm font-medium">A SOLUÇÃO</span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 px-2">
             Transformar Técnica em
           </h2>
-          <div className="inline-block mb-6">
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient">
+          <div className="inline-block mb-4 md:mb-6">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gradient">
               Autoridade Clínica
             </h3>
-            <p className="text-xl text-muted-foreground mt-2">
+            <p className="text-base md:text-xl text-muted-foreground mt-2">
               Dominando a comunicação digital
             </p>
           </div>
           
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base px-4">
             Não é teoria acadêmica. É o que funcionou em{" "}
             <strong className="text-foreground">13 anos de TV ao vivo</strong> e{" "}
             <strong className="text-primary">+3.000 clínicas odontológicas</strong> atendidas.
@@ -154,7 +154,7 @@ const SolutionSection = () => {
         </motion.div>
 
         {/* Solution benefits */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 max-w-5xl mx-auto mb-10 md:mb-12">
           {solutions.map((solution, index) => (
             <motion.div
               key={index}
@@ -162,13 +162,13 @@ const SolutionSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all"
+              className="text-center p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border hover:border-primary/30 transition-all"
             >
-              <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-primary/10 flex items-center justify-center">
-                <solution.icon className="w-7 h-7 text-primary" />
+              <div className="w-10 h-10 md:w-14 md:h-14 mx-auto mb-3 md:mb-4 rounded-lg md:rounded-xl bg-primary/10 flex items-center justify-center">
+                <solution.icon className="w-5 h-5 md:w-7 md:h-7 text-primary" />
               </div>
-              <h4 className="font-semibold text-lg mb-2">{solution.title}</h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <h4 className="font-semibold text-sm md:text-lg mb-1 md:mb-2">{solution.title}</h4>
+              <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
                 {solution.description}
               </p>
             </motion.div>
@@ -185,7 +185,7 @@ const SolutionSection = () => {
         >
           <Button 
             onClick={scrollToOffer}
-            className="btn-primary text-lg px-10 py-6 h-auto"
+            className="btn-primary text-sm md:text-lg px-8 md:px-10 py-5 md:py-6 h-auto"
           >
             QUERO DOMINAR ESSA HABILIDADE →
           </Button>

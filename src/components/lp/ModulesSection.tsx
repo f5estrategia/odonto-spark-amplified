@@ -112,17 +112,17 @@ const ModulesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+          <span className="text-primary font-semibold text-xs md:text-sm uppercase tracking-wider">
             O programa
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-3 md:mt-4 mb-4 md:mb-6 px-2">
             O Programa que Transforma
-            <br className="hidden md:block" />
+            <br className="hidden sm:block" />
             <span className="text-gradient">Sua Comunicação</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base px-4">
             5 módulos práticos | 125 minutos de conteúdo direto ao ponto
           </p>
         </motion.div>
@@ -133,16 +133,16 @@ const ModulesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex justify-center mb-12"
+          className="flex justify-center mb-8 md:mb-12"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary/10 border border-primary/30">
-            <span className="text-primary font-bold">⏱️ 125 minutos</span>
-            <span className="text-muted-foreground text-sm">de conteúdo objetivo e aplicável</span>
+          <div className="inline-flex flex-col sm:flex-row items-center gap-1 sm:gap-3 px-4 md:px-6 py-2 md:py-3 rounded-full bg-primary/10 border border-primary/30">
+            <span className="text-primary font-bold text-sm md:text-base">⏱️ 125 minutos</span>
+            <span className="text-muted-foreground text-xs md:text-sm">de conteúdo objetivo e aplicável</span>
           </div>
         </motion.div>
 
         {/* Modules grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto mb-10 md:mb-12">
           {modules.map((module, index) => (
             <motion.div
               key={module.id}
@@ -150,7 +150,7 @@ const ModulesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/10"
+              className="group bg-card border border-border rounded-xl md:rounded-2xl overflow-hidden hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/10"
             >
               {/* Image */}
               <div className="aspect-video relative overflow-hidden">
@@ -164,30 +164,30 @@ const ModulesSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60" />
 
                 {/* Icon */}
-                <div className="absolute bottom-4 left-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/20 backdrop-blur-sm flex items-center justify-center border border-primary/30">
-                    <module.icon className="w-6 h-6 text-primary" />
+                <div className="absolute bottom-3 left-3 md:bottom-4 md:left-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-primary/20 backdrop-blur-sm flex items-center justify-center border border-primary/30">
+                    <module.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                   </div>
                 </div>
               </div>
               
               {/* Content */}
-              <div className="p-5">
-                <h3 className="font-bold text-lg text-foreground mb-1">{module.title}</h3>
-                <p className="text-primary text-sm font-medium mb-3">{module.subtitle}</p>
-                <p className="text-sm text-muted-foreground mb-4">
+              <div className="p-4 md:p-5">
+                <h3 className="font-bold text-base md:text-lg text-foreground mb-0.5 md:mb-1">{module.title}</h3>
+                <p className="text-primary text-xs md:text-sm font-medium mb-2 md:mb-3">{module.subtitle}</p>
+                <p className="text-xs md:text-sm text-muted-foreground mb-3 md:mb-4">
                   {module.description}
                 </p>
                 
-                <div className="space-y-2">
+                <div className="space-y-1.5 md:space-y-2">
                   {module.lessons.slice(0, 3).map((lesson, lessonIndex) => (
                     <div key={lessonIndex} className="flex items-center gap-2">
                       <span className="text-primary text-xs">→</span>
-                      <span className="text-xs text-muted-foreground">{lesson}</span>
+                      <span className="text-[11px] md:text-xs text-muted-foreground">{lesson}</span>
                     </div>
                   ))}
                   {module.lessons.length > 3 && (
-                    <p className="text-xs text-primary font-medium">+ {module.lessons.length - 3} aulas</p>
+                    <p className="text-[11px] md:text-xs text-primary font-medium">+ {module.lessons.length - 3} aulas</p>
                   )}
                 </div>
               </div>
@@ -205,7 +205,7 @@ const ModulesSection = () => {
         >
           <Button 
             onClick={scrollToOffer}
-            className="btn-primary text-base md:text-lg px-8 md:px-10 py-5 md:py-6 h-auto"
+            className="btn-primary text-sm md:text-lg px-6 md:px-10 py-5 md:py-6 h-auto"
           >
             ACESSAR O PROGRAMA COMPLETO →
           </Button>
