@@ -65,45 +65,31 @@ const cases = [
   },
 ];
 
-// VTurb video testimonials - from CRC que Converte and F5 Odonto site
+// VTurb video testimonials - Depoimentos reais de donos de clínicas, dentistas, franqueados e profissionais
 const videoTestimonials = [
-  // Depoimentos do Site F5 Estratégia
   {
-    id: "68f7e3478ea58bfe7173c5b5",
-    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7e3478ea58bfe7173c5b5/player.js",
-    thumbnail: "https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7e3478ea58bfe7173c5b5/thumbnail.jpg",
-    name: "Depoimento Cris - F5 Odonto",
-    source: "f5odonto",
-  },
-  // Depoimentos do CRC que Converte
-  {
-    id: "693e3e160cac63a72de64c13",
-    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e160cac63a72de64c13/player.js",
-    thumbnail: "https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e160cac63a72de64c13/thumbnail.jpg",
-    name: "Depoimento CRC 1",
-    source: "crc",
+    id: "vid-68f7e3478ea58bfe7173c5b5",
+    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7e3478ea58bfe7173c5b5/v4/player.js",
   },
   {
-    id: "693e3e12f415b42f2b12604f",
-    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e12f415b42f2b12604f/player.js",
-    thumbnail: "https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e12f415b42f2b12604f/thumbnail.jpg",
-    name: "Depoimento CRC 2",
-    source: "crc",
-  },
-  // Depoimentos do Discurso do Líder
-  {
-    id: "693e3e0ece33aa061d9cb93d",
-    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0ece33aa061d9cb93d/player.js",
-    thumbnail: "https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0ece33aa061d9cb93d/thumbnail.jpg",
-    name: "Depoimento Comunicação 1",
-    source: "comunicacao",
+    id: "vid-68f7df118ea58bfe7173c0b0",
+    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7df118ea58bfe7173c0b0/v4/player.js",
   },
   {
-    id: "693e3e0af415b42f2b12603b",
-    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0af415b42f2b12603b/player.js",
-    thumbnail: "https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0af415b42f2b12603b/thumbnail.jpg",
-    name: "Depoimento Comunicação 2",
-    source: "comunicacao",
+    id: "vid-68f7dee38ea58bfe7173c072",
+    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7dee38ea58bfe7173c072/v4/player.js",
+  },
+  {
+    id: "vid-693e3e0af415b42f2b12603b",
+    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0af415b42f2b12603b/v4/player.js",
+  },
+  {
+    id: "vid-693e3e0ece33aa061d9cb93d",
+    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0ece33aa061d9cb93d/v4/player.js",
+  },
+  {
+    id: "vid-68f7d9ef21b0a6afaf4cc36c",
+    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7d9ef21b0a6afaf4cc36c/v4/player.js",
   },
 ];
 
@@ -238,62 +224,31 @@ const SocialProofSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-20"
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-4">
-            O que nossos alunos estão dizendo
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-3 md:mb-4">
+            Transformações Reais
           </h3>
-          <p className="text-center text-muted-foreground mb-6">
-            Depoimentos reais de dentistas e clínicas que já transformaram seus resultados
+          <p className="text-center text-muted-foreground text-sm md:text-base mb-4 md:mb-6 max-w-2xl mx-auto px-4">
+            Donos de clínicas, dentistas, franqueados e profissionais de diversas áreas 
+            que já foram transformados com o conhecimento de Fernando Machado
           </p>
-          <p className="text-center text-xs text-primary mb-8">
+          <p className="text-center text-xs text-primary mb-6 md:mb-8">
             ▶️ Clique nos vídeos para assistir
           </p>
           
-          {/* VTurb Video Testimonials Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto mb-10">
+          {/* VTurb Video Testimonials Grid - 2 cols mobile, 3 cols desktop */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 lg:gap-6 max-w-5xl mx-auto mb-10">
             {videoTestimonials.map((video, index) => (
               <motion.div
                 key={video.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
                 className="aspect-[9/16] rounded-xl border border-primary/20 overflow-hidden bg-card"
-              >
-                <div 
-                  id={video.id.replace('vid_', '')} 
-                  style={{ position: 'relative', width: '100%', height: '100%' }}
-                >
-                  <img 
-                    src={video.thumbnail}
-                    style={{ 
-                      position: 'absolute', 
-                      top: 0, 
-                      left: 0, 
-                      width: '100%', 
-                      height: '100%', 
-                      objectFit: 'cover', 
-                      display: 'block' 
-                    }}
-                    alt={video.name}
-                    loading="lazy"
-                  />
-                  <div 
-                    style={{ 
-                      WebkitBackdropFilter: 'blur(5px)', 
-                      backdropFilter: 'blur(5px)', 
-                      position: 'absolute', 
-                      top: 0, 
-                      height: '100%', 
-                      width: '100%' 
-                    }}
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/90 flex items-center justify-center cursor-pointer hover:bg-primary transition-colors">
-                      <Play className="w-5 h-5 md:w-6 md:h-6 text-primary-foreground ml-1" fill="currentColor" />
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+                dangerouslySetInnerHTML={{
+                  __html: `<vturb-smartplayer id="${video.id}" style="display: block; width: 100%; height: 100%;"></vturb-smartplayer>`
+                }}
+              />
             ))}
           </div>
 
