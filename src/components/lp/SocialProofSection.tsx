@@ -94,10 +94,9 @@ const videoTestimonials = [
   },
 ];
 
+const CHECKOUT_URL = "https://pay.hotmart.com/V103862397O?bid=1768402483101";
+
 const SocialProofSection = () => {
-  const scrollToOffer = () => {
-    document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   // Embla Carousel for video testimonials
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
@@ -330,10 +329,10 @@ const SocialProofSection = () => {
           className="text-center"
         >
           <Button 
-            onClick={scrollToOffer}
+            asChild
             className="btn-primary text-base md:text-lg px-8 md:px-10 py-5 md:py-6 h-auto"
           >
-            QUERO RESULTADOS COMO ESTES →
+            <a href={CHECKOUT_URL}>QUERO RESULTADOS COMO ESTES →</a>
           </Button>
         </motion.div>
       </div>
