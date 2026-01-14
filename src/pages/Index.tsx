@@ -1,29 +1,34 @@
+import { lazy, Suspense } from "react";
 import HeroSection from "@/components/lp/HeroSection";
 import PainPointsSection from "@/components/lp/PainPointsSection";
-import SolutionSection from "@/components/lp/SolutionSection";
-import SocialProofSection from "@/components/lp/SocialProofSection";
-import ModulesSection from "@/components/lp/ModulesSection";
-import BonusCRCSection from "@/components/lp/BonusCRCSection";
-import InstructorSection from "@/components/lp/InstructorSection";
-import OfferSection from "@/components/lp/OfferSection";
-import GuaranteeSection from "@/components/lp/GuaranteeSection";
-import FAQSection from "@/components/lp/FAQSection";
-import FooterSection from "@/components/lp/FooterSection";
+
+// Lazy load below-the-fold sections to reduce initial JS bundle
+const SolutionSection = lazy(() => import("@/components/lp/SolutionSection"));
+const SocialProofSection = lazy(() => import("@/components/lp/SocialProofSection"));
+const ModulesSection = lazy(() => import("@/components/lp/ModulesSection"));
+const BonusCRCSection = lazy(() => import("@/components/lp/BonusCRCSection"));
+const InstructorSection = lazy(() => import("@/components/lp/InstructorSection"));
+const OfferSection = lazy(() => import("@/components/lp/OfferSection"));
+const GuaranteeSection = lazy(() => import("@/components/lp/GuaranteeSection"));
+const FAQSection = lazy(() => import("@/components/lp/FAQSection"));
+const FooterSection = lazy(() => import("@/components/lp/FooterSection"));
 
 const Index = () => {
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <HeroSection />
       <PainPointsSection />
-      <SolutionSection />
-      <SocialProofSection />
-      <ModulesSection />
-      <BonusCRCSection />
-      <InstructorSection />
-      <OfferSection />
-      <GuaranteeSection />
-      <FAQSection />
-      <FooterSection />
+      <Suspense fallback={null}>
+        <SolutionSection />
+        <SocialProofSection />
+        <ModulesSection />
+        <BonusCRCSection />
+        <InstructorSection />
+        <OfferSection />
+        <GuaranteeSection />
+        <FAQSection />
+        <FooterSection />
+      </Suspense>
     </main>
   );
 };
