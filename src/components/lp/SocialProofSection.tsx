@@ -65,64 +65,45 @@ const cases = [
   },
 ];
 
-// VTurb video testimonials - from Discurso do Líder and CRC que Converte
+// VTurb video testimonials - from CRC que Converte and F5 Odonto site
 const videoTestimonials = [
-  // Comunicação testimonials
+  // Depoimentos do Site F5 Estratégia
   {
-    id: "vid_693e3e0ece33aa061d9cb93d",
-    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0ece33aa061d9cb93d/player.js",
-    thumbnail: "https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0ece33aa061d9cb93d/thumbnail.jpg",
-    name: "Depoimento Comunicação 1",
-    source: "comunicacao",
+    id: "68f7e3478ea58bfe7173c5b5",
+    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7e3478ea58bfe7173c5b5/player.js",
+    thumbnail: "https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7e3478ea58bfe7173c5b5/thumbnail.jpg",
+    name: "Depoimento Cris - F5 Odonto",
+    source: "f5odonto",
   },
+  // Depoimentos do CRC que Converte
   {
-    id: "vid_693e3e0af415b42f2b12603b",
-    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0af415b42f2b12603b/player.js",
-    thumbnail: "https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0af415b42f2b12603b/thumbnail.jpg",
-    name: "Depoimento Comunicação 2",
-    source: "comunicacao",
-  },
-  // CRC que Converte testimonials  
-  {
-    id: "vid_693e3e160cac63a72de64c13",
+    id: "693e3e160cac63a72de64c13",
     scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e160cac63a72de64c13/player.js",
     thumbnail: "https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e160cac63a72de64c13/thumbnail.jpg",
     name: "Depoimento CRC 1",
     source: "crc",
   },
   {
-    id: "vid_693e3e12f415b42f2b12604f",
+    id: "693e3e12f415b42f2b12604f",
     scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e12f415b42f2b12604f/player.js",
     thumbnail: "https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e12f415b42f2b12604f/thumbnail.jpg",
     name: "Depoimento CRC 2",
     source: "crc",
   },
-];
-
-const testimonials = [
+  // Depoimentos do Discurso do Líder
   {
-    name: "Dra. Mariana Santos",
-    role: "Ortodontista • SP",
-    content: "Em 3 meses, minha agenda de avaliações triplicou. O método do Fernando mudou minha forma de me posicionar nas redes.",
-    rating: 5,
+    id: "693e3e0ece33aa061d9cb93d",
+    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0ece33aa061d9cb93d/player.js",
+    thumbnail: "https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0ece33aa061d9cb93d/thumbnail.jpg",
+    name: "Depoimento Comunicação 1",
+    source: "comunicacao",
   },
   {
-    name: "Dr. Ricardo Oliveira",
-    role: "Implantodontista • RJ",
-    content: "Sempre tive medo de aparecer em vídeo. Depois do treinamento, gravo stories todo dia com naturalidade. Os pacientes comentam que me 'conhecem' antes mesmo da consulta.",
-    rating: 5,
-  },
-  {
-    name: "Dra. Fernanda Lima",
-    role: "Clínica Geral • MG",
-    content: "Parei de competir por preço. Hoje cobro o dobro do que cobrava e meus pacientes indicam amigos porque confiam na minha autoridade.",
-    rating: 5,
-  },
-  {
-    name: "Dr. Henrique Martins",
-    role: "Periodontista • PR",
-    content: "A F5 entende de odontologia como ninguém. Não é marketing genérico, é estratégia feita pra nossa realidade.",
-    rating: 5,
+    id: "693e3e0af415b42f2b12603b",
+    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0af415b42f2b12603b/player.js",
+    thumbnail: "https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0af415b42f2b12603b/thumbnail.jpg",
+    name: "Depoimento Comunicação 2",
+    source: "comunicacao",
   },
 ];
 
@@ -349,44 +330,6 @@ const SocialProofSection = () => {
           </div>
         </motion.div>
 
-        {/* Text testimonials */}
-        <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-12">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-4 md:p-6 lg:p-8 rounded-2xl bg-secondary/50 border border-border hover:border-primary/20 transition-all"
-            >
-              {/* Stars */}
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-primary fill-primary" />
-                ))}
-              </div>
-
-              {/* Content */}
-              <p className="text-foreground leading-relaxed mb-6 italic text-sm md:text-base">
-                "{testimonial.content}"
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                  <span className="text-primary font-semibold text-sm">
-                    {testimonial.name.split(" ").map(n => n[0]).join("")}
-                  </span>
-                </div>
-                <div>
-                  <p className="font-semibold text-sm">{testimonial.name}</p>
-                  <p className="text-xs text-muted-foreground">{testimonial.role}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
 
         {/* CTA */}
         <motion.div 
