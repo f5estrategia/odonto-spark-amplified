@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Star, TrendingUp, Users, Award, Building2, Play } from "lucide-react";
+import { TrendingUp, Users, Award, Building2, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 
 const metrics = [
   {
@@ -97,6 +98,23 @@ const SocialProofSection = () => {
   const scrollToOffer = () => {
     document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" });
   };
+
+  // Embla Carousel for video testimonials
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    align: 'start',
+    slidesToScroll: 1,
+    breakpoints: {
+      '(min-width: 768px)': { slidesToScroll: 1 }
+    }
+  });
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   useEffect(() => {
     // Load VTurb scripts
@@ -235,21 +253,38 @@ const SocialProofSection = () => {
             ▶️ Clique nos vídeos para assistir
           </p>
           
-          {/* VTurb Video Testimonials Grid - 2 cols mobile, 3 cols desktop */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 lg:gap-6 max-w-5xl mx-auto mb-10">
-            {videoTestimonials.map((video, index) => (
-              <motion.div
-                key={video.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="aspect-[9/16] rounded-xl border border-primary/20 overflow-hidden bg-card"
-                dangerouslySetInnerHTML={{
-                  __html: `<vturb-smartplayer id="${video.id}" style="display: block; width: 100%; height: 100%;"></vturb-smartplayer>`
-                }}
-              />
-            ))}
+          {/* VTurb Video Testimonials Carousel */}
+          <div className="relative max-w-5xl mx-auto mb-10">
+            {/* Navigation Buttons */}
+            <button
+              onClick={scrollPrev}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-card border border-primary/30 flex items-center justify-center hover:bg-primary/10 transition-colors"
+              aria-label="Anterior"
+            >
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+            </button>
+            <button
+              onClick={scrollNext}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-card border border-primary/30 flex items-center justify-center hover:bg-primary/10 transition-colors"
+              aria-label="Próximo"
+            >
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+            </button>
+
+            {/* Carousel Container */}
+            <div className="overflow-hidden px-6 md:px-8" ref={emblaRef}>
+              <div className="flex gap-3 md:gap-4">
+                {videoTestimonials.map((video) => (
+                  <div
+                    key={video.id}
+                    className="flex-none w-[85%] md:w-[calc(33.333%-11px)] aspect-[9/16] rounded-xl border border-primary/20 overflow-hidden bg-card"
+                    dangerouslySetInnerHTML={{
+                      __html: `<vturb-smartplayer id="${video.id}" style="display: block; width: 100%; height: 100%;"></vturb-smartplayer>`
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Print testimonials from Discurso do Líder */}
