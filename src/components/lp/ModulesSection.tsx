@@ -162,13 +162,6 @@ const ModulesSection = () => {
                 />
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60" />
-                
-                {/* Duration badge */}
-                <div className="absolute top-4 right-4">
-                  <span className="bg-background/90 backdrop-blur-sm text-foreground text-xs font-medium px-3 py-1.5 rounded-full border border-border">
-                    {module.duration}
-                  </span>
-                </div>
 
                 {/* Icon */}
                 <div className="absolute bottom-4 left-4">
