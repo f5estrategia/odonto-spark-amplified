@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import bannerDesktop from "@/assets/banner-desktop.jpg";
+import bannerMobile from "@/assets/banner-mobile.jpg";
 
 const HeroSection = () => {
   const scrollToOffer = () => {
@@ -81,55 +82,25 @@ const HeroSection = () => {
           pacientes que valorizam (e pagam) pelo seu trabalho.
         </motion.p>
 
-        {/* VSL Player - VTurb embed */}
+        {/* Course Banner */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="relative w-full max-w-4xl mx-auto mb-8"
         >
-          <div className="aspect-video rounded-2xl border-2 border-primary/30 overflow-hidden glow-orange bg-card">
-            {/* VTurb Player Embed */}
-            <div 
-              id="vid_6931672e8f0253bca66460a0" 
-              style={{ position: 'relative', width: '100%', padding: '56.25% 0 0' }}
-            >
-              <img 
-                id="thumb_6931672e8f0253bca66460a0" 
-                src="https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/6931672e8f0253bca66460a0/thumbnail.jpg" 
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                alt="thumbnail"
-              />
-              <div 
-                id="backdrop_6931672e8f0253bca66460a0" 
-                style={{ 
-                  WebkitBackdropFilter: 'blur(5px)', 
-                  backdropFilter: 'blur(5px)', 
-                  position: 'absolute', 
-                  top: 0, 
-                  height: '100%', 
-                  width: '100%' 
-                }}
-              />
-            </div>
-            <script 
-              dangerouslySetInnerHTML={{
-                __html: `
-                  (function() {
-                    var s = document.createElement('script');
-                    s.src = 'https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/6931672e8f0253bca66460a0/player.js';
-                    s.async = true;
-                    document.head.appendChild(s);
-                  })();
-                `
-              }}
-            />
-          </div>
-          
-          {/* Progress bar visual */}
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-muted">
-            <div className="h-full bg-primary" style={{ width: '0%' }} />
-          </div>
+          {/* Desktop Banner */}
+          <img 
+            src={bannerDesktop}
+            alt="Autoridade Clínica - Dominando a Comunicação Digital"
+            className="hidden md:block w-full rounded-2xl border-2 border-primary/30 glow-orange"
+          />
+          {/* Mobile Banner */}
+          <img 
+            src={bannerMobile}
+            alt="Autoridade Clínica - Dominando a Comunicação Digital"
+            className="block md:hidden w-full max-w-sm mx-auto rounded-2xl border-2 border-primary/30 glow-orange"
+          />
         </motion.div>
 
         {/* CTA Button */}
