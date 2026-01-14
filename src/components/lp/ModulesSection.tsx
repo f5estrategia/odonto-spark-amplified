@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { BookOpen, Mic, Camera, MessageSquare, Crown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Import module thumbnails
@@ -12,7 +11,6 @@ import capaMod5 from "@/assets/modules/capa-mod5.jpg";
 const modules = [
   {
     id: "01",
-    icon: BookOpen,
     title: "FUNDAÇÃO",
     subtitle: "CONTEÚDO É PODER",
     description: "Técnicas de oratória são inúteis sem conteúdo relevante.",
@@ -23,12 +21,9 @@ const modules = [
       "Nivelar por Baixo",
       "Não Seja Intelectual",
     ],
-    duration: "13 min",
-    color: "from-orange-500 to-amber-500",
   },
   {
     id: "02",
-    icon: Mic,
     title: "PREPARAÇÃO",
     subtitle: "ROTEIRO VENCEDOR",
     description: "Framework jornalístico de 20 anos para estruturar apresentações.",
@@ -39,12 +34,9 @@ const modules = [
       "Priorize Informação",
       "Storytelling na Prática",
     ],
-    duration: "17 min",
-    color: "from-amber-500 to-yellow-500",
   },
   {
     id: "03",
-    icon: Camera,
     title: "APRESENTAÇÃO",
     subtitle: "CONFIANÇA NA PRÁTICA",
     description: "Técnicas de TV ao vivo para dominar a ansiedade.",
@@ -56,12 +48,9 @@ const modules = [
       "Palavras Difíceis",
       "Abertura e Fechamento",
     ],
-    duration: "20 min",
-    color: "from-yellow-500 to-orange-500",
   },
   {
     id: "04",
-    icon: MessageSquare,
     title: "DOMINANDO",
     subtitle: "CONTROLE E ADAPTAÇÃO",
     description: "O que fazer quando dá tudo errado ao vivo.",
@@ -73,12 +62,9 @@ const modules = [
       "A Arte do Improviso",
       "Lidando com Interrupções",
     ],
-    duration: "16 min",
-    color: "from-orange-500 to-red-500",
   },
   {
     id: "05",
-    icon: Crown,
     title: "AUTORIDADE",
     subtitle: "PACIENTES CONFIAM EM VOCÊ",
     description: "Como conquistar uma sala (ou uma câmera) em 30 segundos.",
@@ -90,8 +76,6 @@ const modules = [
       "Comunicação Digital",
       "Câmera e Gravação",
     ],
-    duration: "31 min",
-    color: "from-red-500 to-orange-600",
   },
 ];
 
@@ -162,13 +146,6 @@ const ModulesSection = () => {
                 />
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60" />
-
-                {/* Icon */}
-                <div className="absolute bottom-3 left-3 md:bottom-4 md:left-4">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-primary/20 backdrop-blur-sm flex items-center justify-center border border-primary/30">
-                    <module.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
-                  </div>
-                </div>
               </div>
               
               {/* Content */}
@@ -201,13 +178,13 @@ const ModulesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center"
+          className="text-center px-4"
         >
           <Button 
             onClick={scrollToOffer}
-            className="btn-primary text-sm md:text-lg px-6 md:px-10 py-5 md:py-6 h-auto"
+            className="btn-primary text-[13px] sm:text-sm md:text-lg px-4 sm:px-6 md:px-10 py-5 md:py-6 h-auto leading-tight"
           >
-            ACESSAR O PROGRAMA COMPLETO →
+            ACESSAR PROGRAMA COMPLETO →
           </Button>
         </motion.div>
       </div>
