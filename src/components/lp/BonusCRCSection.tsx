@@ -1,19 +1,54 @@
 import { motion } from "framer-motion";
-import { Gift, CheckCircle2, Users, TrendingUp, Zap, Target, Phone, MessageSquare } from "lucide-react";
+import { Gift, CheckCircle2, Users, TrendingUp, Zap, Target, Phone, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const crcModules = [
-  "Fundamentos de Vendas para Clínicas",
-  "Script de Primeiro Contato",
-  "Técnica BANT de Qualificação",
-  "Follow-up que Converte",
-  "Objeções e Fechamento",
-  "Métricas e Acompanhamento",
+  { 
+    name: "Fundamentos", 
+    description: "Fundamentos de Vendas para Clínicas",
+    image: "https://crcqueconverte.f5educacao.com/assets/images/modulo1.webp" 
+  },
+  { 
+    name: "Canais de Conversão", 
+    description: "Script de Primeiro Contato",
+    image: "https://crcqueconverte.f5educacao.com/assets/images/modulo2.webp" 
+  },
+  { 
+    name: "Engajamento & Follow-up", 
+    description: "Técnica BANT de Qualificação",
+    image: "https://crcqueconverte.f5educacao.com/assets/images/modulo3.webp" 
+  },
+  { 
+    name: "Rapport & Conexão", 
+    description: "Follow-up que Converte",
+    image: "https://crcqueconverte.f5educacao.com/assets/images/modulo4.webp" 
+  },
+  { 
+    name: "Funil & Jornada", 
+    description: "Objeções e Fechamento",
+    image: "https://crcqueconverte.f5educacao.com/assets/images/modulo5.webp" 
+  },
+  { 
+    name: "Fechamento Infalível", 
+    description: "Métricas e Acompanhamento",
+    image: "https://crcqueconverte.f5educacao.com/assets/images/modulo6.webp" 
+  },
 ];
 
 const BonusCRCSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const scrollToOffer = () => {
     document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % crcModules.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + crcModules.length) % crcModules.length);
   };
 
   return (
@@ -65,21 +100,80 @@ const BonusCRCSection = () => {
         >
           <div className="rounded-3xl bg-gradient-to-br from-primary/20 via-card to-primary/10 border-2 border-primary/50 overflow-hidden glow-orange">
             <div className="grid lg:grid-cols-2 gap-8">
-              {/* Left side - Image and info */}
+              {/* Left side - Image carousel */}
               <div className="p-6 md:p-8 lg:p-10">
+                {/* Image carousel */}
                 <div className="relative mb-6">
-                  <img 
-                    src="https://crcqueconverte.f5educacao.com/assets/images/modulo6.webp" 
-                    alt="CRC que Converte"
+                  <motion.img 
+                    key={currentSlide}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                    src={crcModules[currentSlide].image} 
+                    alt={`CRC que Converte - ${crcModules[currentSlide].name}`}
                     className="w-full rounded-2xl border border-primary/30"
                     loading="lazy"
                   />
                   <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground px-4 py-2 rounded-full font-bold text-sm shadow-lg">
                     GRÁTIS
                   </div>
+                  
+                  {/* Carousel controls */}
+                  <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between px-2">
+                    <button 
+                      onClick={prevSlide}
+                      className="w-10 h-10 rounded-full bg-background/80 border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <button 
+                      onClick={nextSlide}
+                      className="w-10 h-10 rounded-full bg-background/80 border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+                  </div>
                 </div>
                 
-                <div className="flex items-center gap-4 mb-4">
+                {/* Module indicators */}
+                <div className="flex justify-center gap-2 mb-6">
+                  {crcModules.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-2 h-2 rounded-full transition-all ${
+                        index === currentSlide 
+                          ? "w-6 bg-primary" 
+                          : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                      }`}
+                    />
+                  ))}
+                </div>
+
+                {/* Module thumbnails */}
+                <div className="grid grid-cols-6 gap-2">
+                  {crcModules.map((module, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`rounded-lg overflow-hidden border-2 transition-all ${
+                        index === currentSlide 
+                          ? "border-primary scale-105" 
+                          : "border-transparent opacity-60 hover:opacity-100"
+                      }`}
+                    >
+                      <img 
+                        src={module.image} 
+                        alt={module.name}
+                        className="w-full aspect-[3/4] object-cover"
+                        loading="lazy"
+                      />
+                    </button>
+                  ))}
+                </div>
+                
+                <div className="flex items-center gap-4 mt-6 mb-4">
                   <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center">
                     <Phone className="w-7 h-7 text-primary" />
                   </div>
@@ -124,7 +218,7 @@ const BonusCRCSection = () => {
                   {crcModules.map((module, index) => (
                     <div key={index} className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground">{module}</span>
+                      <span className="text-sm text-muted-foreground">{module.description}</span>
                     </div>
                   ))}
                 </div>
