@@ -23,7 +23,7 @@ const HeroSection = () => {
         <img 
           src={f5EducacaoLogo} 
           alt="F5 Educação" 
-          className="h-8 sm:h-10 md:h-12 w-auto opacity-80"
+          className="h-12 sm:h-14 md:h-16 w-auto opacity-90"
         />
       </nav>
 
