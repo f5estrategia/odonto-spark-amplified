@@ -41,10 +41,9 @@ const painPoints = [
   },
 ];
 
+const CHECKOUT_URL = "https://pay.hotmart.com/V103862397O?bid=1768402483101";
+
 const PainPointsSection = () => {
-  const scrollToOffer = () => {
-    document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section className="section-padding bg-card/50 relative overflow-hidden">
@@ -124,11 +123,11 @@ const PainPointsSection = () => {
           </p>
 
           <Button 
-            onClick={scrollToOffer}
+            asChild
             variant="outline"
             className="mt-6 md:mt-8 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-[13px] sm:text-sm px-4 sm:px-6"
           >
-            QUERO TER CORAGEM →
+            <a href={CHECKOUT_URL}>QUERO TER CORAGEM →</a>
           </Button>
         </motion.div>
       </div>

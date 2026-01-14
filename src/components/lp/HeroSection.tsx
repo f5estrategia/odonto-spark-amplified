@@ -6,10 +6,9 @@ import bannerMobile from "@/assets/banner-mobile.jpg";
 import logotipoCurso from "@/assets/logotipo-curso.svg";
 import f5EducacaoLogo from "@/assets/f5-educacao-logo.svg";
 
+const CHECKOUT_URL = "https://pay.hotmart.com/V103862397O?bid=1768402483101";
+
 const HeroSection = () => {
-  const scrollToOffer = () => {
-    document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
@@ -116,10 +115,10 @@ const HeroSection = () => {
           className="w-full max-w-md px-4"
         >
           <Button 
-            onClick={scrollToOffer}
+            asChild
             className="w-full btn-primary text-[13px] sm:text-sm md:text-lg px-4 sm:px-6 py-5 md:py-6 h-auto animate-pulse-glow leading-tight"
           >
-            QUERO SER UMA AUTORIDADE →
+            <a href={CHECKOUT_URL}>QUERO SER UMA AUTORIDADE →</a>
           </Button>
           
           {/* Trust indicators */}

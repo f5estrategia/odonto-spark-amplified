@@ -44,8 +44,9 @@ const bonuses = [
   },
 ];
 
+const CHECKOUT_URL = "https://pay.hotmart.com/V103862397O?bid=1768402483101";
+
 const OfferSection = () => {
-  const checkoutUrl = "https://pay.hotmart.com/V103862397O";
 
   const totalBonusValue = bonuses.reduce((acc, bonus) => {
     const value = parseInt(bonus.value.replace(/[^0-9]/g, ''));
@@ -210,7 +211,7 @@ const OfferSection = () => {
                   asChild
                   className="w-full md:w-auto btn-primary text-[13px] sm:text-sm md:text-lg px-4 sm:px-8 md:px-12 py-5 md:py-7 h-auto animate-pulse-glow mb-4 md:mb-6 leading-tight"
                 >
-                  <a href={checkoutUrl}>
+                  <a href={CHECKOUT_URL}>
                     <Zap className="w-4 h-4 md:w-5 md:h-5 mr-1.5 md:mr-2 flex-shrink-0" />
                     SER UMA AUTORIDADE CLÍNICA
                   </a>

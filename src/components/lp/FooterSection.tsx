@@ -1,10 +1,9 @@
 import { Button } from "@/components/ui/button";
 import f5EducacaoLogo from "@/assets/f5-educacao-logo.svg";
 
+const CHECKOUT_URL = "https://pay.hotmart.com/V103862397O?bid=1768402483101";
+
 const FooterSection = () => {
-  const scrollToOffer = () => {
-    document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <footer className="section-padding bg-background border-t border-border">
@@ -21,10 +20,10 @@ const FooterSection = () => {
             seu trabalho. Comece agora por apenas R$ 197.
           </p>
           <Button 
-            onClick={scrollToOffer}
+            asChild
             className="btn-primary text-sm md:text-lg px-8 md:px-12 py-5 md:py-6 h-auto"
           >
-            QUERO COMEÇAR AGORA
+            <a href={CHECKOUT_URL}>QUERO COMEÇAR AGORA</a>
           </Button>
         </div>
 

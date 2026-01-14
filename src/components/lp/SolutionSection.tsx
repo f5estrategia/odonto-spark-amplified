@@ -48,10 +48,9 @@ const rootCauses = [
   },
 ];
 
+const CHECKOUT_URL = "https://pay.hotmart.com/V103862397O?bid=1768402483101";
+
 const SolutionSection = () => {
-  const scrollToOffer = () => {
-    document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section className="section-padding relative overflow-hidden">
@@ -184,10 +183,10 @@ const SolutionSection = () => {
           className="text-center"
         >
           <Button 
-            onClick={scrollToOffer}
+            asChild
             className="btn-primary text-[13px] sm:text-sm md:text-lg px-4 sm:px-8 md:px-10 py-5 md:py-6 h-auto leading-tight"
           >
-            DOMINAR ESSA HABILIDADE →
+            <a href={CHECKOUT_URL}>DOMINAR ESSA HABILIDADE →</a>
           </Button>
         </motion.div>
       </div>
