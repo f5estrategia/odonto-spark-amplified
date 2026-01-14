@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { TrendingUp, Users, Award, Building2, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useState, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
 const metrics = [
@@ -97,6 +97,8 @@ const videoTestimonials = [
 const CHECKOUT_URL = "https://pay.hotmart.com/V103862397O?bid=1768402483101";
 
 const SocialProofSection = () => {
+  const [videosLoaded, setVideosLoaded] = useState(false);
+  const videoSectionRef = useRef<HTMLDivElement>(null);
 
   // Embla Carousel for video testimonials
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
@@ -115,18 +117,36 @@ const SocialProofSection = () => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
+  // Lazy load VTurb scripts only when video section is visible
   useEffect(() => {
-    // Load VTurb scripts
-    videoTestimonials.forEach((video) => {
-      const existingScript = document.querySelector(`script[src="${video.scriptSrc}"]`);
-      if (!existingScript) {
-        const script = document.createElement('script');
-        script.src = video.scriptSrc;
-        script.async = true;
-        document.head.appendChild(script);
-      }
-    });
-  }, []);
+    if (!videoSectionRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !videosLoaded) {
+            // Load VTurb scripts only when section becomes visible
+            videoTestimonials.forEach((video) => {
+              const existingScript = document.querySelector(`script[src="${video.scriptSrc}"]`);
+              if (!existingScript) {
+                const script = document.createElement('script');
+                script.src = video.scriptSrc;
+                script.async = true;
+                document.head.appendChild(script);
+              }
+            });
+            setVideosLoaded(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { rootMargin: '200px' } // Start loading 200px before section is visible
+    );
+
+    observer.observe(videoSectionRef.current);
+
+    return () => observer.disconnect();
+  }, [videosLoaded]);
 
   return (
     <section className="section-padding bg-gradient-to-b from-card/50 to-background relative overflow-hidden">
@@ -253,7 +273,7 @@ const SocialProofSection = () => {
           </p>
           
           {/* VTurb Video Testimonials Carousel */}
-          <div className="relative max-w-5xl mx-auto mb-10">
+          <div className="relative max-w-5xl mx-auto mb-10" ref={videoSectionRef}>
             {/* Navigation Buttons */}
             <button
               onClick={scrollPrev}
