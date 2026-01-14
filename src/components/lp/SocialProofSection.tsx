@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Star, TrendingUp, Users, Award, Building2, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 const metrics = [
   {
@@ -64,6 +65,34 @@ const cases = [
   },
 ];
 
+// VTurb video testimonials - from Discurso do Líder and CRC
+const videoTestimonials = [
+  {
+    id: "vid_693e3e0ece33aa061d9cb93d",
+    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0ece33aa061d9cb93d/player.js",
+    thumbnail: "https://cdn.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0ece33aa061d9cb93d/thumbnail.jpg",
+    name: "Depoimento Comunicação 1",
+  },
+  {
+    id: "vid_693e3e0af415b42f2b12603b",
+    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0af415b42f2b12603b/player.js",
+    thumbnail: "https://cdn.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0af415b42f2b12603b/thumbnail.jpg",
+    name: "Depoimento Comunicação 2",
+  },
+  {
+    id: "vid_693e3e160cac63a72de64c13",
+    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e160cac63a72de64c13/player.js",
+    thumbnail: "https://cdn.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e160cac63a72de64c13/thumbnail.jpg",
+    name: "Depoimento Comunicação 3",
+  },
+  {
+    id: "vid_693e3e12f415b42f2b12604f",
+    scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e12f415b42f2b12604f/player.js",
+    thumbnail: "https://cdn.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e12f415b42f2b12604f/thumbnail.jpg",
+    name: "Depoimento Comunicação 4",
+  },
+];
+
 const testimonials = [
   {
     name: "Dra. Mariana Santos",
@@ -95,6 +124,19 @@ const SocialProofSection = () => {
   const scrollToOffer = () => {
     document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    // Load VTurb scripts
+    videoTestimonials.forEach((video) => {
+      const existingScript = document.querySelector(`script[src="${video.scriptSrc}"]`);
+      if (!existingScript) {
+        const script = document.createElement('script');
+        script.src = video.scriptSrc;
+        script.async = true;
+        document.head.appendChild(script);
+      }
+    });
+  }, []);
 
   return (
     <section className="section-padding bg-gradient-to-b from-card/50 to-background relative overflow-hidden">
@@ -130,16 +172,16 @@ const SocialProofSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center p-6 md:p-8 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all"
+              className="text-center p-4 md:p-6 lg:p-8 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all"
             >
-              <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-primary/10 flex items-center justify-center">
-                <metric.icon className="w-6 h-6 text-primary" />
+              <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 md:mb-4 rounded-xl bg-primary/10 flex items-center justify-center">
+                <metric.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-gradient mb-1">
+              <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-gradient mb-1">
                 {metric.value}
               </div>
-              <div className="text-sm font-medium text-foreground">{metric.label}</div>
-              <div className="text-xs text-muted-foreground">{metric.description}</div>
+              <div className="text-xs md:text-sm font-medium text-foreground">{metric.label}</div>
+              <div className="text-xs text-muted-foreground hidden md:block">{metric.description}</div>
             </motion.div>
           ))}
         </div>
@@ -156,7 +198,7 @@ const SocialProofSection = () => {
             Cases de Sucesso
           </h3>
           
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
             {cases.map((caseItem, index) => (
               <motion.div
                 key={index}
@@ -178,21 +220,21 @@ const SocialProofSection = () => {
                 </div>
                 
                 {/* Content */}
-                <div className="p-6">
-                  <h4 className="font-bold text-lg mb-4 flex items-center gap-2">
+                <div className="p-4 md:p-6">
+                  <h4 className="font-bold text-base md:text-lg mb-4 flex items-center gap-2">
                     {caseItem.name} {caseItem.badge}
                   </h4>
                   
-                  <div className="grid grid-cols-2 gap-3 mb-4">
+                  <div className="grid grid-cols-2 gap-2 md:gap-3 mb-4">
                     {caseItem.stats.map((stat, statIndex) => (
                       <div key={statIndex} className="text-center p-2 rounded-lg bg-secondary/50">
                         <div className="text-xs text-muted-foreground">{stat.label}</div>
-                        <div className="font-bold text-primary">{stat.value}</div>
+                        <div className="font-bold text-sm md:text-base text-primary">{stat.value}</div>
                       </div>
                     ))}
                   </div>
                   
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
                     {caseItem.description}
                   </p>
                 </div>
@@ -216,49 +258,90 @@ const SocialProofSection = () => {
             Histórias reais de transformação de quem já domina a arte de comunicar
           </p>
           
-          {/* VTurb Video Testimonial Player */}
-          <div className="max-w-2xl mx-auto mb-10">
-            <div className="aspect-[9/16] md:aspect-video rounded-2xl border-2 border-primary/30 overflow-hidden bg-card">
-              <div 
-                id="vid_693e3e0ece33aa061d9cb93d" 
-                style={{ position: 'relative', width: '100%', padding: '133.33% 0 0' }}
+          {/* VTurb Video Testimonials Grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto mb-10">
+            {videoTestimonials.map((video, index) => (
+              <motion.div
+                key={video.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="aspect-[9/16] rounded-xl border border-primary/20 overflow-hidden bg-card"
               >
-                <img 
-                  id="thumb_693e3e0ece33aa061d9cb93d" 
-                  src="https://cdn.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0ece33aa061d9cb93d/thumbnail.jpg" 
-                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                  alt="Depoimento de aluno"
-                />
                 <div 
-                  id="backdrop_693e3e0ece33aa061d9cb93d" 
-                  style={{ 
-                    WebkitBackdropFilter: 'blur(5px)', 
-                    backdropFilter: 'blur(5px)', 
-                    position: 'absolute', 
-                    top: 0, 
-                    height: '100%', 
-                    width: '100%' 
-                  }}
-                />
-              </div>
-              <script 
-                dangerouslySetInnerHTML={{
-                  __html: `
-                    (function() {
-                      var s = document.createElement('script');
-                      s.src = 'https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0ece33aa061d9cb93d/player.js';
-                      s.async = true;
-                      document.head.appendChild(s);
-                    })();
-                  `
-                }}
+                  id={video.id.replace('vid_', '')} 
+                  style={{ position: 'relative', width: '100%', height: '100%' }}
+                >
+                  <img 
+                    src={video.thumbnail}
+                    style={{ 
+                      position: 'absolute', 
+                      top: 0, 
+                      left: 0, 
+                      width: '100%', 
+                      height: '100%', 
+                      objectFit: 'cover', 
+                      display: 'block' 
+                    }}
+                    alt={video.name}
+                    loading="lazy"
+                  />
+                  <div 
+                    style={{ 
+                      WebkitBackdropFilter: 'blur(5px)', 
+                      backdropFilter: 'blur(5px)', 
+                      position: 'absolute', 
+                      top: 0, 
+                      height: '100%', 
+                      width: '100%' 
+                    }}
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/90 flex items-center justify-center cursor-pointer hover:bg-primary transition-colors">
+                      <Play className="w-5 h-5 md:w-6 md:h-6 text-primary-foreground ml-1" fill="currentColor" />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Print testimonials from Discurso do Líder */}
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="rounded-xl overflow-hidden border border-border"
+            >
+              <img 
+                src="https://discursodolider.f5educacao.com/assets/images/depoimento_print1.jpg" 
+                alt="Depoimento de aluno - Print 1"
+                className="w-full h-auto"
+                loading="lazy"
               />
-            </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="rounded-xl overflow-hidden border border-border"
+            >
+              <img 
+                src="https://discursodolider.f5educacao.com/assets/images/depoimento_print2.jpg" 
+                alt="Depoimento de aluno - Print 2"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </motion.div>
           </div>
         </motion.div>
 
         {/* Text testimonials */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-12">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -266,7 +349,7 @@ const SocialProofSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-6 md:p-8 rounded-2xl bg-secondary/50 border border-border hover:border-primary/20 transition-all"
+              className="p-4 md:p-6 lg:p-8 rounded-2xl bg-secondary/50 border border-border hover:border-primary/20 transition-all"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-4">
@@ -276,7 +359,7 @@ const SocialProofSection = () => {
               </div>
 
               {/* Content */}
-              <p className="text-foreground leading-relaxed mb-6 italic">
+              <p className="text-foreground leading-relaxed mb-6 italic text-sm md:text-base">
                 "{testimonial.content}"
               </p>
 
@@ -306,7 +389,7 @@ const SocialProofSection = () => {
         >
           <Button 
             onClick={scrollToOffer}
-            className="btn-primary text-lg px-10 py-6 h-auto"
+            className="btn-primary text-base md:text-lg px-8 md:px-10 py-5 md:py-6 h-auto"
           >
             QUERO RESULTADOS COMO ESTES →
           </Button>

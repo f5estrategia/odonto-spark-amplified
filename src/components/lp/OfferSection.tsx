@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Gift, Shield, Clock, CreditCard, Zap } from "lucide-react";
+import { CheckCircle2, Gift, Shield, Clock, CreditCard, Zap, Sparkles } from "lucide-react";
 
 const included = [
-  "5 Módulos Completos (125 minutos)",
-  "Acesso por 1 Ano",
+  "5 Módulos Completos de Comunicação",
+  "Acesso por 1 Ano Completo",
   "Certificado Profissional",
   "Assista quantas vezes quiser",
   "Técnicas comprovadas em TV ao vivo",
@@ -13,24 +13,38 @@ const included = [
 
 const bonuses = [
   {
+    title: "🎁 CRC QUE CONVERTE",
+    description: "Treinamento completo de vendas para sua CRC. 6 módulos práticos para converter mais pacientes.",
+    value: "R$ 497",
+    highlight: true,
+  },
+  {
     title: "Roteiros Prontos para Vídeos",
     description: "10 modelos de roteiros para vídeos e posts que você pode adaptar e usar imediatamente.",
     value: "R$ 97",
+    highlight: false,
   },
   {
     title: "Checklist do Vídeo Perfeito",
     description: "Um guia prático para garantir que seus vídeos tenham qualidade profissional.",
     value: "R$ 47",
+    highlight: false,
   },
   {
     title: "Calendário de Conteúdo 30 dias",
     description: "Planejamento completo de posts para um mês inteiro de presença digital.",
     value: "R$ 67",
+    highlight: false,
   },
 ];
 
 const OfferSection = () => {
   const checkoutUrl = "#"; // Substituir pelo link real do checkout
+
+  const totalBonusValue = bonuses.reduce((acc, bonus) => {
+    const value = parseInt(bonus.value.replace(/[^0-9]/g, ''));
+    return acc + value;
+  }, 0);
 
   return (
     <section id="oferta" className="section-padding relative overflow-hidden">
@@ -87,7 +101,7 @@ const OfferSection = () => {
             </div>
 
             {/* Content */}
-            <div className="p-6 md:p-10">
+            <div className="p-5 md:p-10">
               {/* What's included */}
               <div className="mb-10">
                 <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
@@ -125,18 +139,32 @@ const OfferSection = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
-                      className="flex items-center justify-between p-4 rounded-xl bg-primary/5 border border-primary/20"
+                      className={`flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-xl border ${
+                        bonus.highlight 
+                          ? 'bg-gradient-to-r from-primary/20 to-primary/10 border-primary/50' 
+                          : 'bg-primary/5 border-primary/20'
+                      }`}
                     >
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                          <Gift className="w-5 h-5 text-primary" />
+                      <div className="flex items-start sm:items-center gap-3 mb-2 sm:mb-0">
+                        <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                          bonus.highlight ? 'bg-primary/30' : 'bg-primary/10'
+                        }`}>
+                          {bonus.highlight ? (
+                            <Sparkles className="w-5 h-5 text-primary" />
+                          ) : (
+                            <Gift className="w-5 h-5 text-primary" />
+                          )}
                         </div>
                         <div>
-                          <p className="font-semibold text-sm">{bonus.title}</p>
+                          <p className={`font-semibold text-sm ${bonus.highlight ? 'text-primary' : ''}`}>
+                            {bonus.title}
+                          </p>
                           <p className="text-xs text-muted-foreground">{bonus.description}</p>
                         </div>
                       </div>
-                      <span className="text-primary font-bold whitespace-nowrap ml-4 line-through opacity-50">
+                      <span className={`text-primary font-bold whitespace-nowrap sm:ml-4 line-through opacity-50 ${
+                        bonus.highlight ? 'text-lg' : ''
+                      }`}>
                         {bonus.value}
                       </span>
                     </motion.div>
@@ -145,7 +173,7 @@ const OfferSection = () => {
                 
                 <div className="text-center mt-4 p-3 rounded-lg bg-secondary/50">
                   <p className="text-sm text-muted-foreground">
-                    Valor total em bônus: <span className="line-through">R$ 211,00</span>{" "}
+                    Valor total em bônus: <span className="line-through">R$ {totalBonusValue},00</span>{" "}
                     <span className="text-primary font-bold">GRÁTIS</span>
                   </p>
                 </div>
@@ -161,29 +189,29 @@ const OfferSection = () => {
               >
                 <p className="text-muted-foreground mb-2 text-sm">Por apenas:</p>
                 
-                <div className="mb-4">
-                  <p className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                <div className="mb-6">
+                  <p className="text-2xl md:text-4xl font-bold text-foreground mb-2">
                     10x de{" "}
-                    <span className="text-primary">R$ 9,70</span>
+                    <span className="text-primary">R$ 19,70</span>
                   </p>
                   <p className="text-muted-foreground">
-                    Ou <strong className="text-foreground">R$ 97,00</strong> à vista no cartão ou PIX
+                    Ou <strong className="text-foreground text-xl">R$ 197,00</strong> à vista no cartão ou PIX
                   </p>
                 </div>
 
                 {/* CTA Button */}
                 <Button 
                   asChild
-                  className="w-full md:w-auto btn-primary text-lg px-12 py-7 h-auto animate-pulse-glow mb-6"
+                  className="w-full md:w-auto btn-primary text-base md:text-lg px-10 md:px-12 py-6 md:py-7 h-auto animate-pulse-glow mb-6"
                 >
                   <a href={checkoutUrl}>
                     <Zap className="w-5 h-5 mr-2" />
-                    COMEÇAR AGORA
+                    QUERO SER UMA AUTORIDADE CLÍNICA
                   </a>
                 </Button>
 
                 {/* Trust badges */}
-                <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-xs md:text-sm text-muted-foreground">
+                <div className="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-xs md:text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <Shield className="w-4 h-4 text-primary" />
                     Pagamento seguro
@@ -209,7 +237,7 @@ const OfferSection = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mt-8 text-center"
           >
-            <p className="text-muted-foreground flex items-center justify-center gap-2">
+            <p className="text-muted-foreground flex items-center justify-center gap-2 flex-wrap">
               <Shield className="w-5 h-5 text-primary" />
               🛡️ <strong className="text-foreground">Garantia de 7 dias</strong> ou seu dinheiro de volta
             </p>
