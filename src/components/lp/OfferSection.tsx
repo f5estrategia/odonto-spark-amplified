@@ -31,9 +31,15 @@ const bonuses = [
     highlight: false,
   },
   {
-    title: "📅 Calendário de Conteúdo 30 dias",
-    description: "Planejamento completo de posts para um mês inteiro de presença digital.",
-    value: "R$ 67",
+    title: "🔍 Diagnóstico Gratuito da Clínica",
+    description: "Análise personalizada da sua clínica pelo time de especialistas da F5 Estratégia.",
+    value: "R$ 297",
+    highlight: false,
+  },
+  {
+    title: "🎨 Criativos que Convertem",
+    description: "Material exclusivo com modelos de criativos de alta conversão para implantes dentários.",
+    value: "R$ 197",
     highlight: false,
   },
 ];
@@ -222,7 +228,7 @@ const OfferSection = () => {
                   </div>
                   <div className="flex items-center gap-1.5 md:gap-2">
                     <CreditCard className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
-                    <span>Parcelamento em até 12x</span>
+                    <span>Parcelamento em até 10x</span>
                   </div>
                 </div>
               </motion.div>
