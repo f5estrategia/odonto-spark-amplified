@@ -3,35 +3,35 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle2, Gift, Shield, Clock, CreditCard, Zap, Sparkles } from "lucide-react";
 
 const included = [
-  "5 Módulos Completos de Comunicação",
+  "5 Módulos Completos de Comunicação (125 min)",
   "Acesso por 1 Ano Completo",
   "Certificado Profissional",
   "Assista quantas vezes quiser",
-  "Técnicas comprovadas em TV ao vivo",
+  "Técnicas comprovadas em 13 anos de TV ao vivo",
   "Método adaptado para odontologia",
 ];
 
 const bonuses = [
   {
     title: "🎁 CRC QUE CONVERTE",
-    description: "Treinamento completo de vendas para sua CRC. 6 módulos práticos para converter mais pacientes.",
+    description: "Treinamento completo de vendas para sua CRC. 6 módulos para converter +60% mais pacientes.",
     value: "R$ 497",
     highlight: true,
   },
   {
-    title: "Roteiros Prontos para Vídeos",
+    title: "📝 Roteiros Prontos para Vídeos",
     description: "10 modelos de roteiros para vídeos e posts que você pode adaptar e usar imediatamente.",
     value: "R$ 97",
     highlight: false,
   },
   {
-    title: "Checklist do Vídeo Perfeito",
+    title: "✅ Checklist do Vídeo Perfeito",
     description: "Um guia prático para garantir que seus vídeos tenham qualidade profissional.",
     value: "R$ 47",
     highlight: false,
   },
   {
-    title: "Calendário de Conteúdo 30 dias",
+    title: "📅 Calendário de Conteúdo 30 dias",
     description: "Planejamento completo de posts para um mês inteiro de presença digital.",
     value: "R$ 67",
     highlight: false,

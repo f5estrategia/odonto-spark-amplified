@@ -65,31 +65,37 @@ const cases = [
   },
 ];
 
-// VTurb video testimonials - from Discurso do Líder and CRC
+// VTurb video testimonials - from Discurso do Líder and CRC que Converte
 const videoTestimonials = [
+  // Comunicação testimonials
   {
     id: "vid_693e3e0ece33aa061d9cb93d",
     scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0ece33aa061d9cb93d/player.js",
-    thumbnail: "https://cdn.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0ece33aa061d9cb93d/thumbnail.jpg",
+    thumbnail: "https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0ece33aa061d9cb93d/thumbnail.jpg",
     name: "Depoimento Comunicação 1",
+    source: "comunicacao",
   },
   {
     id: "vid_693e3e0af415b42f2b12603b",
     scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0af415b42f2b12603b/player.js",
-    thumbnail: "https://cdn.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0af415b42f2b12603b/thumbnail.jpg",
+    thumbnail: "https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e0af415b42f2b12603b/thumbnail.jpg",
     name: "Depoimento Comunicação 2",
+    source: "comunicacao",
   },
+  // CRC que Converte testimonials  
   {
     id: "vid_693e3e160cac63a72de64c13",
     scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e160cac63a72de64c13/player.js",
-    thumbnail: "https://cdn.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e160cac63a72de64c13/thumbnail.jpg",
-    name: "Depoimento Comunicação 3",
+    thumbnail: "https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e160cac63a72de64c13/thumbnail.jpg",
+    name: "Depoimento CRC 1",
+    source: "crc",
   },
   {
     id: "vid_693e3e12f415b42f2b12604f",
     scriptSrc: "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e12f415b42f2b12604f/player.js",
-    thumbnail: "https://cdn.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e12f415b42f2b12604f/thumbnail.jpg",
-    name: "Depoimento Comunicação 4",
+    thumbnail: "https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693e3e12f415b42f2b12604f/thumbnail.jpg",
+    name: "Depoimento CRC 2",
+    source: "crc",
   },
 ];
 
@@ -254,8 +260,11 @@ const SocialProofSection = () => {
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-4">
             O que nossos alunos estão dizendo
           </h3>
-          <p className="text-center text-muted-foreground mb-10">
-            Histórias reais de transformação de quem já domina a arte de comunicar
+          <p className="text-center text-muted-foreground mb-6">
+            Depoimentos reais de dentistas e clínicas que já transformaram seus resultados
+          </p>
+          <p className="text-center text-xs text-primary mb-8">
+            ▶️ Clique nos vídeos para assistir
           </p>
           
           {/* VTurb Video Testimonials Grid */}
