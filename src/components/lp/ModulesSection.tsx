@@ -2,14 +2,21 @@ import { motion } from "framer-motion";
 import { BookOpen, Mic, Camera, MessageSquare, Crown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// Import module thumbnails
+import capaMod1 from "@/assets/modules/capa-mod1.jpg";
+import capaMod2 from "@/assets/modules/capa-mod2.jpg";
+import capaMod3 from "@/assets/modules/capa-mod3.jpg";
+import capaMod4 from "@/assets/modules/capa-mod4.jpg";
+import capaMod5 from "@/assets/modules/capa-mod5.jpg";
+
 const modules = [
   {
     id: "01",
     icon: BookOpen,
     title: "FUNDAÇÃO",
-    subtitle: "CONTEÚDO REINA",
+    subtitle: "CONTEÚDO É PODER",
     description: "Técnicas de oratória são inúteis sem conteúdo relevante.",
-    image: "https://discursodolider.f5educacao.com/assets/images/modules/modulo1-fundacao.jpg",
+    image: capaMod1,
     lessons: [
       "Boas-vindas e apresentação",
       "Conteúdo - A Base de Tudo",
@@ -23,9 +30,9 @@ const modules = [
     id: "02",
     icon: Mic,
     title: "PREPARAÇÃO",
-    subtitle: "CHECKLIST ESTRATÉGICO",
+    subtitle: "ROTEIRO VENCEDOR",
     description: "Framework jornalístico de 20 anos para estruturar apresentações.",
-    image: "https://discursodolider.f5educacao.com/assets/images/modules/modulo2-preparacao.jpg",
+    image: capaMod2,
     lessons: [
       "5W1H e Pirâmide Invertida",
       "Monte Seu Roteiro",
@@ -39,9 +46,9 @@ const modules = [
     id: "03",
     icon: Camera,
     title: "APRESENTAÇÃO",
-    subtitle: "DESAFIANDO O MEDO",
+    subtitle: "CONFIANÇA NA PRÁTICA",
     description: "Técnicas de TV ao vivo para dominar a ansiedade.",
-    image: "https://discursodolider.f5educacao.com/assets/images/modules/modulo3-apresentacao.jpg",
+    image: capaMod3,
     lessons: [
       "O Medo de Falar",
       "Preparação da Voz",
@@ -55,10 +62,10 @@ const modules = [
   {
     id: "04",
     icon: MessageSquare,
-    title: "IMPROVISO",
-    subtitle: "DOMINANDO O IMPROVISO",
+    title: "DOMINANDO",
+    subtitle: "CONTROLE E ADAPTAÇÃO",
     description: "O que fazer quando dá tudo errado ao vivo.",
-    image: "https://discursodolider.f5educacao.com/assets/images/modules/modulo4-dominando.jpg",
+    image: capaMod4,
     lessons: [
       "O Famoso Branco",
       "Técnicas de Respiração",
@@ -72,10 +79,10 @@ const modules = [
   {
     id: "05",
     icon: Crown,
-    title: "ENGAJAMENTO",
-    subtitle: "ENGAJAMENTO DE LIDERANÇA",
+    title: "AUTORIDADE",
+    subtitle: "PACIENTES CONFIAM EM VOCÊ",
     description: "Como conquistar uma sala (ou uma câmera) em 30 segundos.",
-    image: "https://discursodolider.f5educacao.com/assets/images/modules/modulo5-engajamento.jpg",
+    image: capaMod5,
     lessons: [
       "Criando Rapport",
       "Lidando com Objeções",
@@ -154,14 +161,7 @@ const ModulesSection = () => {
                   loading="lazy"
                 />
                 {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
-                
-                {/* Module number badge */}
-                <div className="absolute top-4 left-4">
-                  <span className={`bg-gradient-to-r ${module.color} text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg`}>
-                    MÓDULO {module.id}
-                  </span>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60" />
                 
                 {/* Duration badge */}
                 <div className="absolute top-4 right-4">
