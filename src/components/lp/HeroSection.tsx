@@ -18,7 +18,7 @@ const HeroSection = () => {
           </div>
           <span className="text-sm font-medium text-muted-foreground hidden sm:block">estratégia</span>
         </div>
-        <span className="text-sm text-muted-foreground">Autoridade Clínica</span>
+        <span className="text-sm font-semibold text-foreground">Autoridade Clínica</span>
       </nav>
 
       {/* Background gradient */}
@@ -62,13 +62,10 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <span className="text-primary font-semibold text-sm md:text-base uppercase tracking-wider mb-4 block">
-            Assista ao vídeo abaixo
-          </span>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-            A comunicação é a única arma
+            Você é um excelente dentista.
             <br />
-            <span className="text-gradient">que você tem para jogar esse jogo</span>
+            <span className="text-gradient">Mas ninguém sabe disso.</span>
           </h1>
         </motion.div>
 
@@ -79,9 +76,9 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mb-8"
         >
-          Descubra como uma pessoa que falava "poblema" virou apresentador de TV — e como{" "}
-          <span className="text-foreground font-semibold">você pode dominar essa habilidade</span> e 
-          se tornar uma autoridade no cenário digital odontológico.
+          Descubra como transformar sua expertise clínica em{" "}
+          <span className="text-foreground font-semibold">autoridade digital</span> e atrair os 
+          pacientes que valorizam (e pagam) pelo seu trabalho.
         </motion.p>
 
         {/* VSL Player - VTurb embed */}

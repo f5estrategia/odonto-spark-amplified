@@ -3,6 +3,7 @@ import PainPointsSection from "@/components/lp/PainPointsSection";
 import SolutionSection from "@/components/lp/SolutionSection";
 import SocialProofSection from "@/components/lp/SocialProofSection";
 import ModulesSection from "@/components/lp/ModulesSection";
+import BonusCRCSection from "@/components/lp/BonusCRCSection";
 import InstructorSection from "@/components/lp/InstructorSection";
 import OfferSection from "@/components/lp/OfferSection";
 import GuaranteeSection from "@/components/lp/GuaranteeSection";
@@ -17,6 +18,7 @@ const Index = () => {
       <SolutionSection />
       <SocialProofSection />
       <ModulesSection />
+      <BonusCRCSection />
       <InstructorSection />
       <OfferSection />
       <GuaranteeSection />
