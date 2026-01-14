@@ -39,7 +39,7 @@ const bonuses = [
 ];
 
 const OfferSection = () => {
-  const checkoutUrl = "#"; // Substituir pelo link real do checkout
+  const checkoutUrl = "https://pay.hotmart.com/V103862397O";
 
   const totalBonusValue = bonuses.reduce((acc, bonus) => {
     const value = parseInt(bonus.value.replace(/[^0-9]/g, ''));
