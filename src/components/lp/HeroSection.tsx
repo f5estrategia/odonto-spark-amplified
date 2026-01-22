@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import bannerDesktop from "@/assets/banner-desktop.jpg";
 import bannerMobile from "@/assets/banner-mobile.jpg";
 import logotipoCurso from "@/assets/logotipo-curso.svg";
-import f5EducacaoLogo from "@/assets/f5-educacao-logo.svg";
+
 
 const CHECKOUT_URL = "https://pay.hotmart.com/V103862397O?bid=1768402483101";
 
@@ -13,16 +13,11 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
       {/* Top navigation bar */}
-      <nav className="relative z-20 flex flex-col items-center gap-3 px-4 py-5 md:py-6 md:px-6">
+      <nav className="relative z-20 flex items-center justify-center px-4 py-4 md:py-5 md:px-6">
         <img 
           src={logotipoCurso} 
-          alt="Autoridade Clínica - Dominando a Comunicação Digital" 
-          className="h-12 sm:h-14 md:h-16 w-auto"
-        />
-        <img 
-          src={f5EducacaoLogo} 
-          alt="F5 Educação" 
-          className="h-12 sm:h-14 md:h-16 w-auto opacity-90"
+          alt="Comunicação - Dentista que Vende" 
+          className="h-10 sm:h-12 md:h-14 w-auto"
         />
       </nav>
 
