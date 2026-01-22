@@ -99,10 +99,10 @@ const OfferSection = () => {
               <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRoLTJ2LTRoMnYtMmgtNHY2aDR2Mmgydi0yem0tOC04djJoMnYtMmgtMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30" />
               <div className="relative">
                 <h3 className="text-xl md:text-3xl font-bold text-primary-foreground mb-1 md:mb-2">
-                  Autoridade Clínica
+                  Comunicação: Dentista que Vende
                 </h3>
                 <p className="text-primary-foreground/90 text-sm md:text-base">
-                  Dominando a comunicação digital para dentistas
+                  O método para vender mais na odontologia
                 </p>
               </div>
             </div>
@@ -213,7 +213,7 @@ const OfferSection = () => {
                 >
                   <a href={CHECKOUT_URL}>
                     <Zap className="w-4 h-4 md:w-5 md:h-5 mr-1.5 md:mr-2 flex-shrink-0" />
-                    SER UMA AUTORIDADE CLÍNICA
+                    QUERO VENDER MAIS
                   </a>
                 </Button>
 
