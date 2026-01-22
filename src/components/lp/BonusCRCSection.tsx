@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Gift, CheckCircle2, Users, TrendingUp, Zap, Target, Phone, ChevronLeft, ChevronRight } from "lucide-react";
+import { CheckCircle2, Users, TrendingUp, Zap, Target, Phone, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -36,12 +36,11 @@ const crcModules = [
   },
 ];
 
+const CHECKOUT_URL = "https://pay.hotmart.com/A102890720L?checkoutMode=10&bid=1769123702608";
+const LP_URL = "https://crcqueconverte.f5educacao.com";
+
 const BonusCRCSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const scrollToOffer = () => {
-    document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % crcModules.length);
@@ -73,8 +72,8 @@ const BonusCRCSection = () => {
           className="text-center mb-12"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/40 mb-6">
-            <Gift className="w-5 h-5 text-primary" />
-            <span className="text-primary font-bold">BÔNUS EXCLUSIVO</span>
+            <Phone className="w-5 h-5 text-primary" />
+            <span className="text-primary font-bold">TREINAMENTO PARA SUA EQUIPE</span>
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
@@ -85,8 +84,7 @@ const BonusCRCSection = () => {
           
           <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
             De nada adianta você gerar leads se sua CRC não sabe converter.
-            Por isso, ao adquirir o <strong className="text-foreground">Autoridade Clínica</strong>, você leva 
-            <strong className="text-primary"> gratuitamente</strong> o treinamento completo para sua equipe de vendas.
+            Treine sua equipe de vendas com o método que já gerou <strong className="text-foreground">mais de R$ 50 milhões</strong> em faturamento para clínicas odontológicas.
           </p>
         </motion.div>
 
@@ -116,7 +114,7 @@ const BonusCRCSection = () => {
                     loading="lazy"
                   />
                   <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground px-4 py-2 rounded-full font-bold text-sm shadow-lg">
-                    GRÁTIS
+                    OFERTA ESPECIAL
                   </div>
                   
                   {/* Carousel controls */}
@@ -183,10 +181,38 @@ const BonusCRCSection = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-3 p-4 rounded-xl bg-card/50 border border-border">
-                  <span className="text-muted-foreground">Valor real:</span>
-                  <span className="text-2xl font-bold text-foreground line-through opacity-60">R$ 497</span>
-                  <span className="text-2xl font-bold text-primary">→ R$ 0</span>
+                <div className="p-4 rounded-xl bg-card/50 border border-border">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-muted-foreground">De:</span>
+                    <span className="text-xl font-bold text-foreground line-through opacity-60">R$ 497</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-muted-foreground">Por:</span>
+                    <span className="text-2xl font-bold text-primary">10x R$ 9,70</span>
+                    <span className="text-muted-foreground">ou</span>
+                    <span className="text-lg font-bold text-foreground">R$ 97 à vista</span>
+                  </div>
+                </div>
+                
+                {/* CTA Buttons */}
+                <div className="flex flex-col gap-3 mt-4">
+                  <Button 
+                    asChild
+                    className="btn-primary w-full text-base py-5 h-auto animate-pulse-glow"
+                  >
+                    <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
+                      QUERO TREINAR MINHA EQUIPE →
+                    </a>
+                  </Button>
+                  <Button 
+                    asChild
+                    variant="outline"
+                    className="w-full text-base py-4 h-auto border-primary/50 hover:bg-primary/10"
+                  >
+                    <a href={LP_URL} target="_blank" rel="noopener noreferrer">
+                      Conhecer mais sobre o treinamento
+                    </a>
+                  </Button>
                 </div>
               </div>
               
@@ -270,14 +296,27 @@ const BonusCRCSection = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center"
         >
-          <Button 
-            onClick={scrollToOffer}
-            className="btn-primary text-base md:text-lg px-8 md:px-10 py-5 md:py-6 h-auto animate-pulse-glow"
-          >
-            QUERO O TREINAMENTO COMPLETO →
-          </Button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button 
+              asChild
+              className="btn-primary text-base md:text-lg px-8 md:px-10 py-5 md:py-6 h-auto animate-pulse-glow"
+            >
+              <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
+                COMPRAR AGORA POR 10x R$9,70 →
+              </a>
+            </Button>
+            <Button 
+              asChild
+              variant="outline"
+              className="text-base px-6 py-5 h-auto border-primary/50 hover:bg-primary/10"
+            >
+              <a href={LP_URL} target="_blank" rel="noopener noreferrer">
+                Ver página completa
+              </a>
+            </Button>
+          </div>
           <p className="text-sm text-muted-foreground mt-4">
-            Autoridade Clínica + CRC que Converte por um único investimento
+            Transforme sua CRC em uma máquina de conversão
           </p>
         </motion.div>
       </div>
