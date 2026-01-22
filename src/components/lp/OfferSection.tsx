@@ -44,7 +44,7 @@ const bonuses = [
   },
 ];
 
-const CHECKOUT_URL = "https://pay.hotmart.com/V103862397O?bid=1768402483101";
+const CHECKOUT_URL = "https://pay.hotmart.com/V103862397O?checkoutMode=10&bid=1769124989760";
 
 const OfferSection = () => {
 
