@@ -138,10 +138,10 @@ const SolutionSection = () => {
           </h2>
           <div className="inline-block mb-4 md:mb-6">
             <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gradient">
-              Autoridade Clínica
+              Comunicação: Dentista que Vende
             </h3>
             <p className="text-base md:text-xl text-muted-foreground mt-2">
-              Dominando a comunicação digital
+              O método para se comunicar de forma estratégica
             </p>
           </div>
           

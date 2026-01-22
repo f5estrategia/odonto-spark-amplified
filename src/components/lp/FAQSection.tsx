@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     question: "Já fiz outros cursos de marketing e não funcionou. Por que esse seria diferente?",
-    answer: "O Autoridade Clínica não é um curso genérico de marketing. Foi criado especificamente para dentistas, por quem já ajudou mais de 3.000 clínicas. O foco é na comunicação e posicionamento, que é a base de qualquer estratégia de sucesso.",
+    answer: "O Comunicação: Dentista que Vende não é um curso genérico de marketing. Foi criado especificamente para dentistas, por quem já ajudou mais de 3.000 clínicas. O foco é na comunicação e posicionamento, que é a base de qualquer estratégia de sucesso.",
   },
   {
     question: "Como funciona a garantia?",
@@ -54,7 +54,7 @@ const FAQSection = () => {
             <span className="text-gradient"> Frequentes</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Tire suas dúvidas sobre o programa Autoridade Clínica
+            Tire suas dúvidas sobre o programa Comunicação: Dentista que Vende
           </p>
         </div>
 

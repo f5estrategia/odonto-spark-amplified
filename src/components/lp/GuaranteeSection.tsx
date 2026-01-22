@@ -20,9 +20,9 @@ const GuaranteeSection = () => {
               </h2>
 
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Estamos tão confiantes no poder do método <strong className="text-foreground">Autoridade Clínica</strong> que 
+                Estamos tão confiantes no poder do método <strong className="text-foreground">Comunicação: Dentista que Vende</strong> que 
                 oferecemos uma garantia incondicional. Se nos primeiros 7 dias você 
-                não sentir que este treinamento vai transformar sua comunicação digital, 
+                não sentir que este treinamento vai transformar sua comunicação, 
                 basta solicitar o reembolso e devolvemos <strong className="text-foreground">100% do seu investimento</strong>.
               </p>
 

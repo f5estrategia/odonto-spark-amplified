@@ -91,13 +91,13 @@ const HeroSection = () => {
           {/* Desktop Banner */}
           <img 
             src={bannerDesktop}
-            alt="Autoridade Clínica - Dominando a Comunicação Digital"
+            alt="Comunicação: Dentista que Vende"
             className="hidden md:block w-full rounded-xl md:rounded-2xl border-2 border-primary/30 glow-orange"
           />
           {/* Mobile Banner */}
           <img 
             src={bannerMobile}
-            alt="Autoridade Clínica - Dominando a Comunicação Digital"
+            alt="Comunicação: Dentista que Vende"
             className="block md:hidden w-full max-w-xs sm:max-w-sm mx-auto rounded-xl border-2 border-primary/30 glow-orange"
           />
         </motion.div>
